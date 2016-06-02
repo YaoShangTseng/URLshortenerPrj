@@ -1,0 +1,28 @@
+<h1>URL Shortener</h1>
+
+<%= form_for @urlmap do |f| %>
+
+  <%= f.label :long_url, "Long URL" %>
+  <%= f.text_field :long_url %>
+
+  <%= f.submit "Enter" %>
+
+<% end %>
+
+
+
+<table>
+    <tr>
+      <td>Long URL</td>
+      <td>Short URL</td>
+      <td>Clicks</td>
+    </tr>
+  <% @urlmaps.each do |urlmap| %>
+    <tr>
+      <td><%= urlmap.long_url %></td>
+      <td><%= urlmap.short_url %></td>
+      <td><%= urlmap.clicks %></td>
+      <td><%= link_to "Delete", urlmap_path(urlmap), :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
