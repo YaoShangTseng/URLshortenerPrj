@@ -6,6 +6,22 @@ class UrlmapsController < ApplicationController
 
   end
 
+  def show
+    hex_code = params[:id]
+
+    find = false
+
+    Urlmap.all.each do |urlmap|
+      if hex_code == urlmap.short_url
+        urlmap.clicks += 1
+        urlmap.save
+        redirect_to urlmap.long_url
+        return
+      end
+    end
+    redirect_to urlmaps_path
+  end
+
   def create
 
     @urlmap = Urlmap.new(urlmap_params)
