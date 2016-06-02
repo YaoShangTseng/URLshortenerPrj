@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160602070432) do
   create_table "urlmaps", force: :cascade do |t|
     t.string   "short_url"
     t.string   "long_url"
+    t.integer  "clicks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

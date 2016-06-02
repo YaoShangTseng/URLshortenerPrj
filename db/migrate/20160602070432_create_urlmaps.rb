@@ -3,6 +3,7 @@ class CreateUrlmaps < ActiveRecord::Migration
     create_table :urlmaps do |t|
       t.string :short_url
       t.string :long_url
+      t.integer :clicks
 
       t.timestamps null: false
     end
