@@ -1,0 +1,2 @@
+class UrlmapsController < ApplicationController
+end
