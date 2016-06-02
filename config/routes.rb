@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :urlmaps
 
+  get '/:id' => 'urlmaps#show'
+
   #root 'urlmaps#index'
 
   root 'urlmaps#index'
