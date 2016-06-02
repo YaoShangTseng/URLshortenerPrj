@@ -20,7 +20,7 @@
   <% @urlmaps.each do |urlmap| %>
     <tr>
       <td><%= urlmap.long_url %></td>
-      <td><%= urlmap.short_url %></td>
+      <td><%= link_to urlmap.short_url, urlmap_path(:id => urlmap.short_url) %></td>
       <td><%= urlmap.clicks %></td>
       <td><%= link_to "Delete", urlmap_path(urlmap), :method => :delete %></td>
     </tr>
