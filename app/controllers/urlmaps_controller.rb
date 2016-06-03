@@ -2,8 +2,7 @@ class UrlmapsController < ApplicationController
 
   def index
       @urlmap = Urlmap.new
-      @urlmaps = Urlmap.all
-
+      @urlmaps = Urlmap.all.order(:clicks => :desc)
   end
 
   def goto
