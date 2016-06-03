@@ -6,7 +6,7 @@ class UrlmapsController < ApplicationController
 
   end
 
-  def show
+  def goto
 
     if params[:id]
 
